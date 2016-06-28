@@ -19,4 +19,29 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
         android:textSize="50sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Enter your word containing at least three of the letters"
+        android:id="@+id/inputTextView"
+        android:layout_above="@+id/inputBoggleWord"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputBoggleWord"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submitWordButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

@@ -1,17 +1,27 @@
 package com.example.guest.soloboggle;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PlayActivity extends AppCompatActivity {
-    private TextView mBoggleTextView;
 
     public static final String TAG = PlayActivity.class.getSimpleName();
+
+    private TextView mBoggleTextView;
+    private Button mSubmitWordButton;
+    private EditText mInputBoggleWord;
+
 
     public static String newBoggleString(){
         ArrayList<String> boggleOutputArray = new ArrayList<String>();
@@ -40,6 +50,41 @@ public class PlayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play);
         Log.d(TAG, newBoggleString());
         mBoggleTextView = (TextView) findViewById(R.id.boggleTextView);
-        mBoggleTextView.setText(testOutput);
+        final String boggleLetters = testOutput;
+        mBoggleTextView.setText(boggleLetters);
+        mInputBoggleWord = (EditText) findViewById(R.id.inputBoggleWord);
+        mSubmitWordButton = (Button) findViewById(R.id.submitWordButton);
+        mSubmitWordButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String word = mInputBoggleWord.getText().toString();
+
+                ArrayList<String> checkBoggleString = new ArrayList<String>(Arrays.asList(boggleLetters.split(" ")));
+                ArrayList<String> checkWordString = new ArrayList<String>(Arrays.asList(word.split("")));
+                checkWordString.remove(0);
+
+                Boolean continueOn = false;
+
+                for (String letter : checkWordString) {
+                    if (letter.equals(checkBoggleString.get(0)) || letter.equals(checkBoggleString.get(1)) || letter.equals(checkBoggleString.get(2)) || letter.equals(checkBoggleString.get(3)) || letter.equals(checkBoggleString.get(4)) || letter.equals(checkBoggleString.get(5)) || letter.equals(checkBoggleString.get(6)) || letter.equals(checkBoggleString.get(7))) {
+                        continueOn = true;
+                    } else {
+                        Toast.makeText(PlayActivity.this, "Does not contain boggle letters!", Toast.LENGTH_LONG).show();
+                        break;
+
+                    }
+                }
+                if (continueOn == true) {
+                    Intent intent = new Intent(PlayActivity.this, BoggleActivity.class);
+                    intent.putExtra("word", word);
+                    intent.putExtra("boggleLetters", boggleLetters);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 }
+
+
