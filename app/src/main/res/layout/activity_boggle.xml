@@ -9,12 +9,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.guest.soloboggle.BoggleActivity">
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/boggleGuesses"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Good job!"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Guesses:"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="105dp" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
