@@ -10,7 +10,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://github.com/themingfu/android_soloBoggle` this repository
+* git clone `https://github.com/themingfu/android_soloBoggle` this repository
 
 ## Running / Development
 
