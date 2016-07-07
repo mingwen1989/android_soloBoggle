@@ -1,29 +1,11 @@
-# Android Solo Boggle Game
+# [Android Solo Boggle Game](https://github.com/themingfu/android_soloBoggle)
 
 A single player Boggle game that allows the user to guess words from a randomly-generated array and store guesses in a ListView.
 
-## Prerequisites
+# Usage
 
-You will need the following things properly installed on your computer.
+Just [download this repository](https://github.com/themingfu/android_soloBoggle/archive/master.zip) and uncompress it. Open Android Studio and choose `Open an existing Android Studio project`. Navigate to the folder containing this template and the project should open without issue and be ready to build. Requires Android 6.0 SDK (API 23) aka Marshmallow.
 
-* [Android Studio](https://developer.android.com/studio/index.html)
+# License
 
-## Installation
-
-* git clone `https://github.com/themingfu/android_soloBoggle` this repository
-
-## Running / Development
-
-* Open the project with Android Studio
-
-### Running Tests
-
-* Use included test xml in Android Studio
-
-### Building
-
-* Run the application with Android Studio
-
-### Deploying
-
-Publish the app to Android Market (https://developer.android.com/studio/publish/index.html)
+&copy; 2016 Ming Wen. Shared under an [MIT license](https://en.wikipedia.org/wiki/MIT_License). See [license.md](./LICENSE.md) for details.
